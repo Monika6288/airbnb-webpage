@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Airbnb-inspired homepage — find and book unique stays around the world." />
+  <title>StayBnb — Find your perfect stay</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="header" id="header">
+    <nav class="navbar">
+
+      <div class="nav-logo">
+        <span class="logo-icon">✈</span>
+        <span class="logo-text">StayBnb</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active">All</a></li>
+        <li><a href="#" class="nav-link">Homes</a></li>
+        <li><a href="#" class="nav-link"> Experiences</a></li>
+        <li><a href="#" class="nav-link"> Services</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#" class="btn-host" id="btn-host">Become a host</a>
+        <button class="btn-icon" id="btn-globe" title="Language &amp; Region">🌐</button>
+        
+        <div class="profile-menu-container">
+          <button class="btn-profile" id="btn-profile" title="Profile menu">
+            <span class="hamburger-icon">☰</span>
+            <span class="avatar-icon">👤</span>
+          </button>
+          
+          <!-- Profile Dropdown Menu (Image 3) -->
+          <div class="profile-dropdown" id="profile-dropdown">
+            <a href="#" class="profile-menu-item" id="menu-help">
+              <span class="menu-icon">❓</span>
+              <span class="menu-text">Help Centre</span>
+            </a>
+            <div class="menu-divider"></div>
+            <a href="#" class="profile-menu-item host-promo" id="menu-become-host">
+              <div class="menu-text-group">
+                <span class="menu-title">Become a host</span>
+                <span class="menu-sub">It's easy to start hosting and earn extra income.</span>
+              </div>
+              <span class="menu-promo-icon">🏡</span>
+            </a>
+            <a href="#" class="profile-menu-item" id="menu-refer-host">Refer a host</a>
+            <a href="#" class="profile-menu-item" id="menu-find-cohost">Find a co-host</a>
+            <div class="menu-divider"></div>
+            <a href="#" class="profile-menu-item bold-item" id="menu-login">Log in or sign up</a>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <section class="search-section" id="search">
+    <div class="search-bar" id="search-bar">
+
+      <!-- Where field with dropdown -->
+      <div class="search-field search-field-relative" id="field-where">
+        <label class="search-label" for="destination">Where</label>
+        <input
+          type="text"
+          id="destination"
+          class="search-input"
+          placeholder="Search destinations"
+          autocomplete="off"
+        />
+        <!-- Destination Dropdown -->
+        <div class="destination-dropdown" id="destination-dropdown">
+          <p class="dropdown-section-title">Suggested destinations</p>
+          <ul class="dropdown-list">
+            <li class="dropdown-item" data-dest="Nearby">
+              <span class="dropdown-icon bg-blue">🧭</span>
+              <div class="dropdown-text">
+                <span class="dropdown-name">Nearby</span>
+                <span class="dropdown-sub">Find what's around you</span>
+              </div>
+            </li>
+            <li class="dropdown-item" data-dest="Puducherry, Puducherry">
+              <span class="dropdown-icon bg-orange">🏛️</span>
+              <div class="dropdown-text">
+                <span class="dropdown-name">Puducherry, Puducherry</span>
+                <span class="dropdown-sub">Great for a weekend getaway</span>
+              </div>
+            </li>
+            <li class="dropdown-item" data-dest="Bengaluru, Karnataka">
+              <span class="dropdown-icon bg-green">🌿</span>
+              <div class="dropdown-text">
+                <span class="dropdown-name">Bengaluru, Karnataka</span>
+                <span class="dropdown-sub">For sights like Lalbagh Botanical Garden</span>
+              </div>
+            </li>
+            <li class="dropdown-item" data-dest="Kodaikkanal, Tamil Nadu">
+              <span class="dropdown-icon bg-amber">⛰️</span>
+              <div class="dropdown-text">
+                <span class="dropdown-name">Kodaikkanal, Tamil Nadu</span>
+                <span class="dropdown-sub">For nature lovers</span>
+              </div>
+            </li>
+            <li class="dropdown-item" data-dest="Ooty, Tamil Nadu">
+              <span class="dropdown-icon bg-amber">🌄</span>
+              <div class="dropdown-text">
+                <span class="dropdown-name">Ooty, Tamil Nadu</span>
+                <span class="dropdown-sub">Popular with travellers near you</span>
+              </div>
+            </li>
+            <li class="dropdown-item" data-dest="North Goa, Goa">
+              <span class="dropdown-icon bg-pink">🏖️</span>
+              <div class="dropdown-text">
+                <span class="dropdown-name">North Goa, Goa</span>
+                <span class="dropdown-sub">Popular beach destination</span>
+              </div>
+            </li>
+            <li class="dropdown-item" data-dest="Yelagiri, Tamil Nadu">
+              <span class="dropdown-icon bg-purple">🏔️</span>
+              <div class="dropdown-text">
+                <span class="dropdown-name">Yelagiri, Tamil Nadu</span>
+                <span class="dropdown-sub">Hill station escape</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="search-divider" id="divider-1"></div>
+
+      <!-- When field -->
+      <div class="search-field" id="field-when">
+        <label class="search-label" for="dates">When</label>
+        <input type="text" id="dates" class="search-input" placeholder="Add dates" />
+      </div>
+
+      <div class="search-divider" id="divider-2"></div>
+
+      <!-- Who / Guests field with counter dropdown -->
+      <div class="search-field search-field-relative" id="field-guests">
+        <label class="search-label" for="guests">Who</label>
+        <input
+          type="text"
+          id="guests"
+          class="search-input"
+          placeholder="Add guests"
+          readonly
+        />
+        <!-- Guest Counter Dropdown -->
+        <div class="guest-dropdown" id="guest-dropdown">
+          <div class="guest-row">
+            <div class="guest-info">
+              <span class="guest-type">Adults</span>
+              <span class="guest-subtype">Ages 13 or above</span>
+            </div>
+            <div class="guest-counter">
+              <button class="counter-btn" id="adults-minus" aria-label="Decrease adults">−</button>
+              <span class="counter-val" id="adults-count">0</span>
+              <button class="counter-btn" id="adults-plus" aria-label="Increase adults">+</button>
+            </div>
+          </div>
+          <div class="guest-row">
+            <div class="guest-info">
+              <span class="guest-type">Children</span>
+              <span class="guest-subtype">Ages 2–12</span>
+            </div>
+            <div class="guest-counter">
+              <button class="counter-btn" id="children-minus" aria-label="Decrease children">−</button>
+              <span class="counter-val" id="children-count">0</span>
+              <button class="counter-btn" id="children-plus" aria-label="Increase children">+</button>
+            </div>
+          </div>
+          <div class="guest-row">
+            <div class="guest-info">
+              <span class="guest-type">Infants</span>
+              <span class="guest-subtype">Under 2</span>
+            </div>
+            <div class="guest-counter">
+              <button class="counter-btn" id="infants-minus" aria-label="Decrease infants">−</button>
+              <span class="counter-val" id="infants-count">0</span>
+              <button class="counter-btn" id="infants-plus" aria-label="Increase infants">+</button>
+            </div>
+          </div>
+          <div class="guest-row" style="border-bottom: none;">
+            <div class="guest-info">
+              <span class="guest-type">Pets</span>
+              <a href="#" class="guest-subtype service-animal-link">Bringing a service animal?</a>
+            </div>
+            <div class="guest-counter">
+              <button class="counter-btn" id="pets-minus" aria-label="Decrease pets">−</button>
+              <span class="counter-val" id="pets-count">0</span>
+              <button class="counter-btn" id="pets-plus" aria-label="Increase pets">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-search" id="btn-search">
+        <span class="search-icon">🔍</span>
+        <span class="search-text">Search</span>
+      </button>
+
+    </div>
+  </section>
+
+
+  <section class="categories-section" id="categories">
+    <div class="categories-container">
+
+      <div class="category-item active" id="cat-popular">
+        <span class="cat-icon">🏠</span>
+        <span class="cat-label">Popular</span>
+      </div>
+
+      <div class="category-item" id="cat-beach">
+        <span class="cat-icon">🏖️</span>
+        <span class="cat-label">Beach</span>
+      </div>
+
+      <div class="category-item" id="cat-mountains">
+        <span class="cat-icon">⛰️</span>
+        <span class="cat-label">Mountains</span>
+      </div>
+
+      <div class="category-item" id="cat-views">
+        <span class="cat-icon">🌅</span>
+        <span class="cat-label">Amazing views</span>
+      </div>
+
+      <div class="category-item" id="cat-cabins">
+        <span class="cat-icon">🏕️</span>
+        <span class="cat-label">Cabins</span>
+      </div>
+
+      <div class="category-item" id="cat-pools">
+        <span class="cat-icon">🏊</span>
+        <span class="cat-label">Pools</span>
+      </div>
+
+      <div class="category-item" id="cat-countryside">
+        <span class="cat-icon">🌾</span>
+        <span class="cat-label">Countryside</span>
+      </div>
+
+      <div class="category-item" id="cat-treehouses">
+        <span class="cat-icon">🌳</span>
+        <span class="cat-label">Treehouses</span>
+      </div>
+
+      <div class="category-item" id="cat-tiny-homes">
+        <span class="cat-icon">🏡</span>
+        <span class="cat-label">Tiny homes</span>
+      </div>
+
+      <div class="category-item" id="cat-luxe">
+        <span class="cat-icon">💎</span>
+        <span class="cat-label">Luxe</span>
+      </div>
+
+    </div>
+
+    <button class="btn-filters" id="btn-filters">
+      <span>⚙️</span> Filters
+    </button>
+  </section>
+
+
+  <section class="properties-section" id="properties">
+    <div class="properties-grid">
+
+      <div class="property-card" id="card-beach-villa">
+        <div class="card-image-wrapper">
+          <img
+            src="beach_property.jpg"
+            alt="Beachfront villa with pool in Maldives"
+            class="card-image"
+          />
+          <button class="btn-heart" title="Save to wishlist">♡</button>
+          <span class="card-badge">Guest favourite</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="card-location">Maldives, South Asia</span>
+            <span class="card-rating">⭐ 4.97</span>
+          </div>
+          <p class="card-description">Beachfront Villa with Private Pool</p>
+          <p class="card-dates">15–20 Oct</p>
+          <p class="card-price"><strong>₹35,000</strong> / night</p>
+        </div>
+      </div>
+
+      <div class="property-card" id="card-mountain-cabin">
+        <div class="card-image-wrapper">
+          <img
+            src="mountain_cabin.jpg"
+            alt="Cozy log cabin in the mountains"
+            class="card-image"
+          />
+          <button class="btn-heart" title="Save to wishlist">♡</button>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="card-location">Colorado, USA</span>
+            <span class="card-rating">⭐ 4.92</span>
+          </div>
+          <p class="card-description">Cozy Log Cabin in the Rockies</p>
+          <p class="card-dates">22–27 Oct</p>
+          <p class="card-price"><strong>₹12,500</strong> / night</p>
+        </div>
+      </div>
+
+      <div class="property-card" id="card-city-apt">
+        <div class="card-image-wrapper">
+          <img
+            src="city_apartment.jpg"
+            alt="Luxury apartment with city skyline view"
+            class="card-image"
+          />
+          <button class="btn-heart" title="Save to wishlist">♡</button>
+          <span class="card-badge">Guest favourite</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="card-location">New York, USA</span>
+            <span class="card-rating">⭐ 4.88</span>
+          </div>
+          <p class="card-description">Luxury Penthouse with Skyline Views</p>
+          <p class="card-dates">10–15 Nov</p>
+          <p class="card-price"><strong>₹22,000</strong> / night</p>
+        </div>
+      </div>
+
+      <div class="property-card" id="card-countryside">
+        <div class="card-image-wrapper">
+          <img
+            src="countryside_house.jpg"
+            alt="Rustic farmhouse in Italian countryside"
+            class="card-image"
+          />
+          <button class="btn-heart" title="Save to wishlist">♡</button>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="card-location">Tuscany, Italy</span>
+            <span class="card-rating">⭐ 4.95</span>
+          </div>
+          <p class="card-description">Rustic Stone Farmhouse with Garden</p>
+          <p class="card-dates">5–10 Nov</p>
+          <p class="card-price"><strong>₹9,800</strong> / night</p>
+        </div>
+      </div>
+
+      <div class="property-card" id="card-treehouse">
+        <div class="card-image-wrapper">
+          <img
+            src="treehouse.jpg"
+            alt="Magical treehouse in the forest"
+            class="card-image"
+          />
+          <button class="btn-heart" title="Save to wishlist">♡</button>
+          <span class="card-badge">Rare find</span>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="card-location">Oregon, USA</span>
+            <span class="card-rating">⭐ 4.99</span>
+          </div>
+          <p class="card-description">Enchanted Forest Treehouse Escape</p>
+          <p class="card-dates">18–23 Oct</p>
+          <p class="card-price"><strong>₹15,200</strong> / night</p>
+        </div>
+      </div>
+
+      <div class="property-card" id="card-desert-villa">
+        <div class="card-image-wrapper">
+          <img
+            src="desert_villa.jpg"
+            alt="Desert villa with infinity pool and canyon views"
+            class="card-image"
+          />
+          <button class="btn-heart" title="Save to wishlist">♡</button>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="card-location">Sedona, Arizona</span>
+            <span class="card-rating">⭐ 4.94</span>
+          </div>
+          <p class="card-description">Desert Villa with Canyon Infinity Pool</p>
+          <p class="card-dates">28 Oct – 2 Nov</p>
+          <p class="card-price"><strong>₹28,500</strong> / night</p>
+        </div>
+      </div>
+
+
+      <div class="property-card" id="card-treehouse">
+        <div class="card-image-wrapper">
+          <img
+            src="treehouse.jpg"
+            alt="Magical treehouse in the forest"
+            class="card-image"
+          />
+          <button class="btn-heart" title="Save to wishlist">♡</button>
+          <!-- <span class="card-badge">Rare find</span> -->
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="card-location">Oregon, USA</span>
+            <span class="card-rating">⭐ 4.99</span>
+          </div>
+          <p class="card-description">Enchanted Forest Treehouse Escape</p>
+          <p class="card-dates">18–23 Oct</p>
+          <p class="card-price"><strong>₹15,200</strong> / night</p>
+        </div>
+      </div>
+
+
+      <div class="property-card" id="card-desert-villa">
+        <div class="card-image-wrapper">
+          <img
+            src="desert_villa.jpg"
+            alt="Desert villa with infinity pool and canyon views"
+            class="card-image"
+          />
+          <button class="btn-heart" title="Save to wishlist">♡</button>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="card-location">Sedona, Arizona</span>
+            <span class="card-rating">⭐ 4.94</span>
+          </div>
+          <p class="card-description">Desert Villa with Canyon Infinity Pool</p>
+          <p class="card-dates">28 Oct – 2 Nov</p>
+          <p class="card-price"><strong>₹28,500</strong> / night</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="inspiration-section" id="inspiration">
+
+    <div class="section-heading">
+      <h2 class="section-title">Inspiration for your next trip</h2>
+      <p class="section-subtitle">Explore the most popular destinations right now</p>
+    </div>
+
+    <div class="inspiration-grid">
+
+      <div class="destination-card" id="dest-bali">
+        <div class="dest-image-wrapper">
+          <img src="beach_property.jpg" alt="Bali, Indonesia" class="dest-image" />
+          <div class="dest-overlay"></div>
+          <div class="dest-info">
+            <h3 class="dest-name">Bali, Indonesia</h3>
+            <p class="dest-time">8 hours away</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="destination-card" id="dest-switzerland">
+        <div class="dest-image-wrapper">
+          <img src="mountain_cabin.jpg" alt="Swiss Alps, Switzerland" class="dest-image" />
+          <div class="dest-overlay"></div>
+          <div class="dest-info">
+            <h3 class="dest-name">Swiss Alps</h3>
+            <p class="dest-time">10 hours away</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="destination-card" id="dest-newyork">
+        <div class="dest-image-wrapper">
+          <img src="city_apartment.jpg" alt="New York, USA" class="dest-image" />
+          <div class="dest-overlay"></div>
+          <div class="dest-info">
+            <h3 class="dest-name">New York, USA</h3>
+            <p class="dest-time">14 hours away</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="destination-card" id="dest-tuscany">
+        <div class="dest-image-wrapper">
+          <img src="countryside_house.jpg" alt="Tuscany, Italy" class="dest-image" />
+          <div class="dest-overlay"></div>
+          <div class="dest-info">
+            <h3 class="dest-name">Tuscany, Italy</h3>
+            <p class="dest-time">9 hours away</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="footer" id="footer">
+
+    <div class="footer-top">
+
+      <div class="footer-col" id="footer-support">
+        <h4 class="footer-heading">Support</h4>
+        <ul class="footer-links">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">AirCover</a></li>
+          <li><a href="#">Safety information</a></li>
+          <li><a href="#">Supporting people with disabilities</a></li>
+          <li><a href="#">Cancellation options</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" id="footer-hosting">
+        <h4 class="footer-heading">Hosting</h4>
+        <ul class="footer-links">
+          <li><a href="#">Airbnb your home</a></li>
+          <li><a href="#">AirCover for Hosts</a></li>
+          <li><a href="#">Explore hosting resources</a></li>
+          <li><a href="#">Visit our community forum</a></li>
+          <li><a href="#">How to host responsibly</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" id="footer-company">
+        <h4 class="footer-heading">StayBnb</h4>
+        <ul class="footer-links">
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Learn about new features</a></li>
+          <li><a href="#">Letter from our founders</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Investors</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom">
+
+      <div class="footer-bottom-left">
+        <span class="footer-copy">&copy; 2024 StayBnb, Inc.</span>
+        <span class="footer-dot">&middot;</span>
+        <a href="#" class="footer-link">Privacy</a>
+        <span class="footer-dot">&middot;</span>
+        <a href="#" class="footer-link">Terms</a>
+        <span class="footer-dot">&middot;</span>
+        <a href="#" class="footer-link">Sitemap</a>
+      </div>
+
+      <div class="footer-bottom-right">
+        <button class="footer-action-btn" id="btn-language">
+          🌐 English (IN)
+        </button>
+        <button class="footer-action-btn" id="btn-currency">
+          ₹ INR
+        </button>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- ===== Language and Region Modal (Image 4) ===== -->
+  <div class="lang-modal-overlay" id="lang-modal-overlay" role="dialog" aria-modal="true">
+    <div class="lang-modal">
+      <button class="modal-close" id="lang-modal-close" aria-label="Close modal">✕</button>
+      
+      <div class="lang-modal-header">
+        <div class="lang-tabs">
+          <button class="lang-tab active">Language and region</button>
+          <button class="lang-tab">Currency</button>
+        </div>
+      </div>
+
+      <div class="lang-modal-body">
+        <!-- Translation Toggle Banner -->
+        <div class="translation-banner">
+          <div class="translation-info">
+            <span class="translation-title">Translation <span class="trans-icon">🌐</span></span>
+            <span class="translation-desc">Automatically translate descriptions and reviews to English.</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <!-- Suggested Section -->
+        <h3 class="lang-section-title">Suggested languages and regions</h3>
+        <div class="lang-grid">
+          <div class="lang-card">
+            <span class="lang-name">English</span>
+            <span class="lang-region">United States</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">English</span>
+            <span class="lang-region">United Kingdom</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">हिन्दी</span>
+            <span class="lang-region">भारत</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">ಕನ್ನಡ</span>
+            <span class="lang-region">ಭಾರತ</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">मराठी</span>
+            <span class="lang-region">भारत</span>
+          </div>
+        </div>
+
+        <!-- Choose Section -->
+        <h3 class="lang-section-title">Choose a language and region</h3>
+        <div class="lang-grid">
+          <div class="lang-card active-lang">
+            <span class="lang-name">English</span>
+            <span class="lang-region">India</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Azərbaycan dili</span>
+            <span class="lang-region">Azərbaycan</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Bahasa Indonesia</span>
+            <span class="lang-region">Indonesia</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Bosanski</span>
+            <span class="lang-region">Bosna i Hercegovina</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Català</span>
+            <span class="lang-region">Espanya</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Čeština</span>
+            <span class="lang-region">Česká republika</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Crnogorski</span>
+            <span class="lang-region">Crna Gora</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Dansk</span>
+            <span class="lang-region">Danmark</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Deutsch</span>
+            <span class="lang-region">Deutschland</span>
+          </div>
+          <div class="lang-card">
+            <span class="lang-name">Deutsch</span>
+            <span class="lang-region">Österreich</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Elements
+    const searchBar = document.getElementById('search-bar');
+    const fieldWhere = document.getElementById('field-where');
+    const destInput = document.getElementById('destination');
+    const destDropdown = document.getElementById('destination-dropdown');
+    const destItems = destDropdown.querySelectorAll('.dropdown-item');
+
+    const fieldWhen = document.getElementById('field-when');
+    const fieldGuests = document.getElementById('field-guests');
+    const guestsInput = document.getElementById('guests');
+    const guestDropdown = document.getElementById('guest-dropdown');
+
+    const profileBtn = document.getElementById('btn-profile');
+    const profileDropdown = document.getElementById('profile-dropdown');
+
+    const hostBtn = document.getElementById('btn-host');
+    const hostOverlay = document.getElementById('host-modal-overlay');
+    const hostCloseBtn = document.getElementById('modal-close');
+
+    const globeBtn = document.getElementById('btn-globe');
+    const langFooterBtn = document.getElementById('btn-language');
+    const langOverlay = document.getElementById('lang-modal-overlay');
+    const langCloseBtn = document.getElementById('lang-modal-close');
+
+    const menuBecomeHost = document.getElementById('menu-become-host');
+    const menuLogin = document.getElementById('menu-login');
+
+    // Helper: Reset active state & close all dropdowns
+    function closeAllDropdowns() {
+      destDropdown.classList.remove('open');
+      guestDropdown.classList.remove('open');
+      profileDropdown.classList.remove('open');
+      if (searchBar) searchBar.classList.remove('active-bar');
+      [fieldWhere, fieldWhen, fieldGuests].forEach(f => f && f.classList.remove('active'));
+    }
+
+    function setActiveField(activeField) {
+      if (searchBar) searchBar.classList.add('active-bar');
+      [fieldWhere, fieldWhen, fieldGuests].forEach(f => {
+        if (f) {
+          if (f === activeField) f.classList.add('active');
+          else f.classList.remove('active');
+        }
+      });
+    }
+
+    // 1. Where Field Container Click
+    fieldWhere.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = destDropdown.classList.contains('open');
+      closeAllDropdowns();
+      if (!isOpen) {
+        setActiveField(fieldWhere);
+        destDropdown.classList.add('open');
+        destInput.focus();
+      }
+    });
+
+    destInput.addEventListener('input', () => {
+      const val = destInput.value.toLowerCase();
+      destItems.forEach(item => {
+        const name = item.dataset.dest.toLowerCase();
+        item.style.display = name.includes(val) ? 'flex' : 'none';
+      });
+      destDropdown.classList.add('open');
+    });
+
+    destItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        destInput.value = item.dataset.dest;
+        closeAllDropdowns();
+      });
+    });
+
+    destDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+    // 2. When Field Click
+    if (fieldWhen) {
+      fieldWhen.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeAllDropdowns();
+        setActiveField(fieldWhen);
+      });
+    }
+
+    // 3. Who Field Container Click
+    const counts = { adults: 0, children: 0, infants: 0, pets: 0 };
+
+    function updateGuestInput() {
+      const total = counts.adults + counts.children + counts.infants + counts.pets;
+      if (total === 0) {
+        guestsInput.value = '';
+        guestsInput.placeholder = 'Add guests';
+      } else {
+        const parts = [];
+        if (counts.adults + counts.children > 0) parts.push((counts.adults + counts.children) + ' guest' + (counts.adults + counts.children > 1 ? 's' : ''));
+        if (counts.infants > 0) parts.push(counts.infants + ' infant' + (counts.infants > 1 ? 's' : ''));
+        if (counts.pets > 0) parts.push(counts.pets + ' pet' + (counts.pets > 1 ? 's' : ''));
+        guestsInput.value = parts.join(', ');
+      }
+    }
+
+    ['adults', 'children', 'infants', 'pets'].forEach(type => {
+      document.getElementById(type + '-plus').addEventListener('click', (e) => {
+        e.stopPropagation();
+        counts[type]++;
+        document.getElementById(type + '-count').textContent = counts[type];
+        updateGuestInput();
+        document.getElementById(type + '-minus').disabled = counts[type] === 0;
+      });
+      document.getElementById(type + '-minus').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (counts[type] > 0) {
+          counts[type]--;
+          document.getElementById(type + '-count').textContent = counts[type];
+          updateGuestInput();
+        }
+        document.getElementById(type + '-minus').disabled = counts[type] === 0;
+      });
+      document.getElementById(type + '-minus').disabled = true;
+    });
+
+    fieldGuests.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = guestDropdown.classList.contains('open');
+      closeAllDropdowns();
+      if (!isOpen) {
+        setActiveField(fieldGuests);
+        guestDropdown.classList.add('open');
+      }
+    });
+
+    guestDropdown.addEventListener('click', (e) => e.stopPropagation());
+
+    // 4. Globe Button Click (Language Modal)
+    function openLangModal(e) {
+      if (e) e.preventDefault();
+      closeAllDropdowns();
+      langOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLangModal() {
+      langOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    if (globeBtn) globeBtn.addEventListener('click', openLangModal);
+    if (langFooterBtn) langFooterBtn.addEventListener('click', openLangModal);
+    if (langCloseBtn) langCloseBtn.addEventListener('click', closeLangModal);
+
+    langOverlay.addEventListener('click', (e) => {
+      if (e.target === langOverlay) closeLangModal();
+    });
+
+    // 5. Profile Button Click (Profile Dropdown)
+    if (profileBtn) {
+      profileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = profileDropdown.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) {
+          profileDropdown.classList.add('open');
+        }
+      });
+    }
+
+    // Host / Login Modal triggers
+    function openHostModal(e) {
+      if (e) e.preventDefault();
+      closeAllDropdowns();
+      hostOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeHostModal() {
+      hostOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    if (hostBtn) hostBtn.addEventListener('click', openHostModal);
+    if (menuBecomeHost) menuBecomeHost.addEventListener('click', openHostModal);
+    if (menuLogin) menuLogin.addEventListener('click', openHostModal);
+    if (hostCloseBtn) hostCloseBtn.addEventListener('click', closeHostModal);
+
+    hostOverlay.addEventListener('click', (e) => {
+      if (e.target === hostOverlay) closeHostModal();
+    });
+
+    // Global document click & keydown
+    document.addEventListener('click', () => {
+      closeAllDropdowns();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllDropdowns();
+        closeHostModal();
+        closeLangModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
